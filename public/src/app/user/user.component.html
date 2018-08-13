@@ -1,8 +1,13 @@
 <h1>User Main component</h1>
 
-<pre>
-  {{ users | json }}
-</pre>
+<table class="table table-hover">
+    <tr *ngFor="let user of users">
+      <td>{{ user._id }}</td>
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.last_name }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+</table>
 
 <app-user-new (createNewUserEvent)="create($event)"></app-user-new>
 

@@ -25,10 +25,10 @@ export class UserListComponent implements OnInit {
     }
   }
 
-  update(users) {
+  update(user) {
     const response = confirm('update?')
     if(response){
-      this.updateUserEvent.emit(users)
+      this.updateUserEvent.emit(user)
     }
   }
 

@@ -15,27 +15,27 @@ export class UserService {
   ) { }
 
   create(user: User){
-    return this._http.post('/users', user)
+    return this._http.post('/api/users', user)
       .pipe(map(data => data.json())).toPromise()
   }
 
-  detroy(user: User){
-    return this._http.delete('/users/' + user._id)
+  destroy(user: User){
+    return this._http.delete('/api/users/' + user._id)
       .pipe(map(data => data.json())).toPromise()
   }
   
   update(user: User){
-    return this._http.put('/users/' + user._id, user)
+    return this._http.put('/api/users/' + user._id, user)
       .pipe(map(data => data.json())).toPromise()
   }
 
   getUsers(){
-    return this._http.get('/users')
+    return this._http.get('/api/users')
       .pipe(map(data => data.json())).toPromise()
   }
 
   getUser(user: User){
-    return this._http.get('/users/' + user._id)
+    return this._http.get('/api/users/' + user._id)
       .pipe(map(data => data.json())).toPromise()
   }
 
